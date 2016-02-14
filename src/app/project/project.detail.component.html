@@ -1,0 +1,65 @@
+<div class="panel panel-info">
+  <div class="panel-heading">{{title}}</div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Name</label>
+        <div class="col-xs-10">
+          <input class="form-control" [(ngModel)]="currentProject.name" placeholder="name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Status</label>
+        <div class="col-xs-9">
+          <div class="radio-inline">
+            <label>
+              <input type="radio" checked="checked" (click)="changeStatus($event.target.value)" name="optStatus"  value="new" />New
+            </label>
+          </div>
+          <div class="radio-inline">
+            <label>
+               <input type="radio" name="optStatus" (click)="changeStatus($event.target.value)" value="active" />Active
+            </label>
+          </div>
+          <div class="radio-inline">
+            <label>
+             <input type="radio" name="optStatus" (click)="changeStatus($event.target.value)" value="archived" />Archived
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Description</label>
+        <div class="col-xs-10">
+          <textarea class="form-control" rows="4" placeholder="Comments" [(ngModel)]="currentProject.description" placeholder="Description"></textarea>
+        </div>
+      </div>
+ 
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Project levels</label>
+        <div class="col-xs-6">  <button class="btn btn-primary btn-sm" (click)=addLevel()>Add Level</button>
+       <table  class="table table-condensed">
+      <tr *ngFor="#level of currentProject.levels;#i=index">
+        <td> {{i+1}} </td>
+        <td>
+          <input class="form-control" [(ngModel)]="level.name" placeholder="status" />
+        </td>
+        <td>
+          <button *ngIf= "i > 0" class="btn btn-primary btn-sm" (click)=removeLevel(level)>Remove</button>
+          <input  *ngIf= "i == 0" class="form-control" [(ngModel)]= "currentProject.rootNodeName" placeholder="Root node name" />
+        </td>
+      </tr>
+    </table>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
+ <div class="form-group">
+        <label class="col-xs-2 control-label">
+          <button class="btn btn-primary" (click)=saveProject()>Save</button></label>
+</div>
+ 

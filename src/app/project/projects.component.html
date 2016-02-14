@@ -1,0 +1,19 @@
+<h3>The Great projects from hell</h3>
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Status</th>
+			<th>Created</th>
+			<th>Created By</th>
+		</tr>
+		<tr *ngFor="#proj of allProjects">
+			<td>{{proj.name}}</td>
+			<td>{{proj.status}}</td>
+			<td>{{proj.history.modificationDate}}</td>
+			<td>{{proj.history.modifiedBy.name}}</td>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <base href="http://localhost:3000">
+  <title>rxjs demo</title>
+
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.css" />
+  <link rel="stylesheet" href="app.css" type="text/css" />
+
+  
+  <script src="es6-shim.js"></script>
+  <script src="angular2-polyfills.js"></script>
+  <script src="system.src.js"></script>
+  <script src="angular2.dev.js"></script>
+  <script src="router.dev.js"></script>
+  <script src="http.dev.js"></script>
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="d3/d3.js"></script>
+  <script>
+    System.config({
+  packages: {
+    'rxjs': { defaultExtension: 'js' },
+    'app': {defaultExtension: 'js'},
+    'd3': {defaultExtension:'js'}
+  }
+});
+      System.import('app/boot').catch(console.log.bind(console));
+  </script>
+</head>
+
+<body>
+  <my-app>Floating...</my-app>
+</body>
+
+</html>
