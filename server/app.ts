@@ -31,6 +31,7 @@ app.use(express.static(path.join(lpath, 'node_modules/angular2/bundles')));
 app.use(express.static(path.join(lpath, 'node_modules')));
 app.use(express.static(path.join(lpath, 'node_modules/systemjs/dist')));
 app.use(express.static(path.join(lpath, 'node_modules/es6-shim')));
+
 console.log(path.join(lpath, 'src'));
 
 

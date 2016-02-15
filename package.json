@@ -2,9 +2,7 @@
   "version": "1.0.0",
   "name": "rxjsdemo",
   "private": true,
-  "scripts": {
-
-  },
+  "scripts": {},
   "dependencies": {
     "angular2": "^2.0.0-beta.6",
     "body-parser": "^1.12.0",
@@ -19,6 +17,7 @@
     "mongoose": "^4.2.10",
     "monk": "*",
     "morgan": "^1.5.1",
+    "reflect-metadata": "^0.1.2",
     "rxjs": "5.0.0-beta.0",
     "serve-favicon": "^2.2.0",
     "superagent": "^1.5.0",
