@@ -13,5 +13,6 @@ export class PubSubService{
    Stream: CurrentProjectEventEmitter;
    constructor(){
        this.Stream = new CurrentProjectEventEmitter();
+       this.Stream.share();
    }
 }

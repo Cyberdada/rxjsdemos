@@ -10,6 +10,9 @@ import { Control, ControlGroup, FormBuilder,
 FORM_DIRECTIVES, AsyncPipe} from 'angular2/common';
 import {Http, Headers} from 'angular2/http';
 
+
+import {PubSubService} from './project/current.project.evenEmitter';
+
 @Component({
 	pipes: [ AsyncPipe],
 	selector: 'my-search',
@@ -33,7 +36,9 @@ import {Http, Headers} from 'angular2/http';
 	  code stolen from : 
 	  <a href="https://www.youtube.com/watch?v=JPuqluYYa-o">
 	  https://www.youtube.com/watch?v=JPuqluYYa-o
-	  </a>
+	  </a><br />
+	  Based on  - Angular 2 Data Flow – Jeff Cross, Rob Wormald and Alex Rickabaugh
+	  available here : <a href="https://www.youtube.com/watch?v=KOOT7BArVHQ">https://www.youtube.com/watch?v=KOOT7BArVHQ</a>
 	  </div>
 	 <div class="somemarging">
 	 Results:

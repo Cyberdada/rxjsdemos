@@ -9,8 +9,7 @@ var filesToMove =
 './src/app/**/*.html',
 './node_modules/**/*.*',
 './node_modules/.bin/*.*',
-'./src/index.html',
-'./src/index2.html',
+'./src/*.html',
 './src/app.css', 
 './server/favicon.ico']
 

@@ -1,7 +1,8 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Output, EventEmitter} from 'angular2/core';
 import {Project, IProject, History, User } from  '../models/theModels';
 import {Inject} from 'angular2/core';
 import {ProjectService} from './project.service';
+import {PubSubService} from './current.project.evenEmitter';
 
 
 @Component({
@@ -11,17 +12,24 @@ import {ProjectService} from './project.service';
 })
 
 export class ProjectsComponent implements OnInit {
+     @Output() edit:EventEmitter<boolean> = new EventEmitter();
     allProjects: Project[];
 
-    constructor(private ps:ProjectService) {
+    constructor(private ps:ProjectService, private pubsub:PubSubService) {
        this.allProjects = new Array<Project>();
     }
 
     ngOnInit() {
-             this.ps.get.subscribe(res => {
-            this.allProjects = res;
-                console.log("Res: " + res);
-        });
+        this.getProjects();
+        this.pubsub.Stream.subscribe( itm => this.getProjects());
+    }
+    
+    getProjects() {
+        this.ps.get.subscribe(res => this.allProjects = res);        
+    }
+    
+    newProject() {
+        this.edit.emit(true);
     }
     
 }

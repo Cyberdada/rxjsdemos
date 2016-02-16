@@ -1,6 +1,6 @@
 import  * as express from "express";
 import mongoose = require("mongoose");
-import {IProject, Project, Node , Attachment, Param} from '../../src/app/models/theModels';
+import {IProject, Project} from '../../src/app/models/theModels';
 
 
  interface IProjectModel extends IProject, mongoose.Document { }
@@ -43,6 +43,7 @@ project.create(req.body, function(err, project) {
 }
 
 export function load (req: express.Request, res: express.Response ) {
+    console.log("I been loading pojects....");
    var project = mongoose.model<IProjectModel>("Project", projectSchema);
    var q = project.find({}).sort("-_id");
 
